@@ -1,6 +1,7 @@
 import { getAccessToken, setAccessToken } from "@/accessToken";
 import axiosInstance from "@/axiosInstance";
-import { useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
 export const Layout = () => {
   const navigate = useNavigate();
@@ -44,5 +45,12 @@ export const Layout = () => {
     }
   );
 
-  return <div></div>;
+  return (
+    <div className="relative flex min-h-screen flex-col gap-4 bg-slate-50 text-slate-900">
+      <Navbar />
+      <div className="flex flex-col gap-8 p-4">
+        <Outlet />
+      </div>
+    </div>
+  );
 };

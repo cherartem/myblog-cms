@@ -1,7 +1,7 @@
 import Copyright from "./components/Copyright";
 import Decoration from "./components/Decoration";
 import Greeting from "./components/Greeting";
-import Logotype from "./components/Logotype";
+import Logotype from "../../layout/components/Logotype";
 import SignInForm from "./components/SignInForm";
 
 export const SignInPage = () => {
