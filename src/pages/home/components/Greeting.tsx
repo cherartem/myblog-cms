@@ -1,4 +1,5 @@
 import axiosInstance from "@/axiosInstance";
+import { Skeleton } from "@/components/ui/skeleton";
 import { useQuery } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
 
@@ -16,10 +17,13 @@ export default function Greeting() {
   return (
     <div className="flex flex-col items-center justify-center gap-4 md:items-start">
       {isLoading ? (
-        <Loader2 className="h-8 w-8 animate-spin text-slate-500" />
+        <>
+          <Skeleton className="h-9 w-96 rounded-lg bg-slate-200" />
+          <Skeleton className="h-6 w-80 rounded-lg bg-slate-200" />
+        </>
       ) : isError ? (
-        <p className="text-lg text-slate-500">
-          An error occurred while fetching user data. Please try again later.
+        <p className="text-center text-lg text-slate-500">
+          An unexpected error occurred while fetching user data.
         </p>
       ) : (
         <>
