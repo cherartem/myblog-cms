@@ -7,6 +7,7 @@ import { Layout } from "./layout";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import "@fontsource-variable/raleway/wght.css";
 import { SignInPage } from "./pages/sign-in";
+import HomePage from "./pages/home";
 
 const queryClient = new QueryClient();
 
@@ -14,6 +15,12 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <HomePage />,
+      },
+    ],
   },
   {
     path: "/sign-in",
@@ -25,7 +32,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
-      {/* <ReactQueryDevtools /> */}
+      <ReactQueryDevtools />
     </QueryClientProvider>
   </React.StrictMode>
 );
