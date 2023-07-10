@@ -5,15 +5,19 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { Edit2 } from "lucide-react";
+import { Edit } from "lucide-react";
 
 export default function EditButton() {
   return (
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Button size="icon">
-            <Edit2 />
+          <Button
+            size="icon"
+            variant="secondary"
+            className="hover:bg-slate-200"
+          >
+            <Edit className="text-slate-700" />
           </Button>
         </TooltipTrigger>
         <TooltipContent>

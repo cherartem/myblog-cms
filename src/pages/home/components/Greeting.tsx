@@ -1,7 +1,6 @@
 import axiosInstance from "@/axiosInstance";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useQuery } from "@tanstack/react-query";
-import { Loader2 } from "lucide-react";
 
 async function fetchUserData() {
   const { data } = await axiosInstance.get("users/greeting-data");
@@ -27,7 +26,12 @@ export default function Greeting() {
         </p>
       ) : (
         <>
-          <h1 className="text-4xl font-semibold">Hello, {data?.fullname}</h1>
+          <h1 className=" text-4xl font-semibold">
+            Hello,{" "}
+            <span className="bg-gradient-to-br from-blue-500 to-blue-600 bg-clip-text text-transparent">
+              {data?.fullname}
+            </span>
+          </h1>
           <p className="text-lg text-slate-500">
             You have written {data?.numOfArticles} article(s) in total.
           </p>

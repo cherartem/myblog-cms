@@ -8,6 +8,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import "@fontsource-variable/raleway/wght.css";
 import { SignInPage } from "./pages/sign-in";
 import HomePage from "./pages/home";
+import NewArticlePage from "./pages/new-article";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
+      },
+      {
+        path: "/new-article",
+        element: <NewArticlePage />,
       },
     ],
   },

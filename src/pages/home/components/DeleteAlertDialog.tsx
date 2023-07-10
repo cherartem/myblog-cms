@@ -19,7 +19,7 @@ export default function DeleteAlertDialog() {
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Delete article</AlertDialogTitle>
+          <AlertDialogTitle>Delete the article</AlertDialogTitle>
           <AlertDialogDescription>
             Are you absolutely sure you want to permanently delete this article?
           </AlertDialogDescription>

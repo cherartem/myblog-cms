@@ -7,6 +7,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import MobileMenuTriggerButton from "./MobileMenuTriggerButton";
+import { Link } from "react-router-dom";
 
 export default function MobileMenu() {
   return (
@@ -17,8 +18,12 @@ export default function MobileMenu() {
       <DropdownMenuContent>
         <DropdownMenuLabel>Menu</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>Home</DropdownMenuItem>
-        <DropdownMenuItem>Create a new article</DropdownMenuItem>
+        <DropdownMenuItem asChild>
+          <Link to="/">Home</Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem asChild>
+          <Link to="/new-article">Create a new article</Link>
+        </DropdownMenuItem>
         <DropdownMenuItem>Sign out of your account</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

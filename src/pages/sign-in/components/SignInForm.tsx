@@ -23,10 +23,7 @@ const formSchema = z.object({
   password: z.string().nonempty("This field is required"),
 });
 
-async function sendSignInRequest({
-  username,
-  password,
-}: z.infer<typeof formSchema>) {
+async function signIn({ username, password }: z.infer<typeof formSchema>) {
   const { data } = await axiosInstance.post("users/sign-in", {
     username,
     password,
@@ -47,7 +44,7 @@ export default function SignInForm() {
   });
 
   const { isLoading, mutate } = useMutation({
-    mutationFn: sendSignInRequest,
+    mutationFn: signIn,
     onError: (err: ExtendedAxiosError) => {
       if (err.response.data.errors?.[0]) {
         const errorMessage = err.response.data.errors?.[0].msg;
