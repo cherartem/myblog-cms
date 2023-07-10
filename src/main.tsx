@@ -10,6 +10,7 @@ import { SignInPage } from "./pages/sign-in";
 import HomePage from "./pages/home";
 import NewArticlePage from "./pages/new-article";
 import { Provider as ReactWrapBalancerProvider } from "react-wrap-balancer";
+import SettingsPage from "./pages/settings";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/new-article",
         element: <NewArticlePage />,
+      },
+      {
+        path: "/settings",
+        element: <SettingsPage />,
       },
     ],
   },

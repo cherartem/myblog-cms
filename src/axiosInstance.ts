@@ -29,6 +29,10 @@ axiosInstance.interceptors.response.use(
       try {
         const { data } = await axiosInstance.post("/refresh-token");
 
+        if (data.response.status === 400 || data.response.status === 404) {
+          throw new Error("Unauthorized");
+        }
+
         const newAccessToken = data.accessToken;
 
         setAccessToken(newAccessToken);

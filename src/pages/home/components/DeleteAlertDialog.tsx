@@ -57,7 +57,7 @@ export default function DeleteAlertDialog({ articleId }: Props) {
         <AlertDialogHeader>
           <AlertDialogTitle>Delete the article</AlertDialogTitle>
           <AlertDialogDescription>
-            Are you absolutely sure you want to permanently delete this article?
+            Are you sure you want to permanently delete this article?
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
