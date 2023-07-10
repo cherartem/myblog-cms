@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import { Toaster } from "@/components/ui/toaster";
 
 export const Layout = () => {
   return (
@@ -9,6 +10,7 @@ export const Layout = () => {
         <div className="w-full max-w-screen-lg">
           <Outlet />
         </div>
+        <Toaster />
       </div>
     </div>
   );

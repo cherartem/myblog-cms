@@ -5,6 +5,7 @@ import { Dot } from "lucide-react";
 import { DateTime } from "luxon";
 import { Badge } from "@/components/ui/badge";
 import he from "he";
+import { Balancer } from "react-wrap-balancer";
 
 interface ArticleProps {
   article: IArticle;
@@ -17,7 +18,9 @@ export default function Article({ article }: ArticleProps) {
 
   return (
     <div className="flex w-full flex-col gap-4 rounded-lg border border-border bg-white p-4 drop-shadow-sm">
-      <h1 className="text-xl font-semibold">{he.decode(article.title)}</h1>
+      <h1 className="text-xl font-semibold">
+        <Balancer>{he.decode(article.title)}</Balancer>
+      </h1>
       <div className="flex flex-row items-center gap-1 text-slate-700">
         <p>{formattedDate}</p>
         <Dot className="text-slate-300" />
@@ -29,10 +32,12 @@ export default function Article({ article }: ArticleProps) {
           <Badge variant="outline">Not published</Badge>
         )}
       </div>
-      <p className="text-slate-400">{he.decode(article.description)}</p>
+      <p className="text-slate-400">
+        <Balancer>{he.decode(article.description)}</Balancer>
+      </p>
       <div className="flex flex-row gap-4">
         <EditButton />
-        <DeleteAlertDialog />
+        <DeleteAlertDialog articleId={article._id} />
       </div>
     </div>
   );

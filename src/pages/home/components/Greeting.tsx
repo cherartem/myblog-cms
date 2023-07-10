@@ -26,7 +26,7 @@ export default function Greeting() {
         </p>
       ) : (
         <>
-          <h1 className=" text-4xl font-semibold">
+          <h1 className="text-4xl font-semibold">
             Hello,{" "}
             <span className="bg-gradient-to-br from-blue-500 to-blue-600 bg-clip-text text-transparent">
               {data?.fullname}

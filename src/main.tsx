@@ -9,6 +9,7 @@ import "@fontsource-variable/raleway/wght.css";
 import { SignInPage } from "./pages/sign-in";
 import HomePage from "./pages/home";
 import NewArticlePage from "./pages/new-article";
+import { Provider as ReactWrapBalancerProvider } from "react-wrap-balancer";
 
 const queryClient = new QueryClient();
 
@@ -36,7 +37,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
+      <ReactWrapBalancerProvider>
+        <RouterProvider router={router} />
+      </ReactWrapBalancerProvider>
       <ReactQueryDevtools />
     </QueryClientProvider>
   </React.StrictMode>
