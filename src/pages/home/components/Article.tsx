@@ -37,7 +37,7 @@ export default function Article({ article }: ArticleProps) {
         <Balancer>{he.decode(article.description)}</Balancer>
       </p>
       <div className="flex flex-row gap-4">
-        <ReadArticleButton />
+        <ReadArticleButton articleId={article._id} />
         <EditButton articleId={article._id} />
         <DeleteAlertDialog articleId={article._id} />
       </div>

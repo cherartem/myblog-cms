@@ -12,6 +12,7 @@ import NewArticlePage from "./pages/new-article";
 import { Provider as ReactWrapBalancerProvider } from "react-wrap-balancer";
 import SettingsPage from "./pages/settings";
 import EditArticlePage from "./pages/edit-article";
+import ReadArticlePage from "./pages/read-article";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/edit/:articleId",
         element: <EditArticlePage />,
+      },
+      {
+        path: "/read/:articleId",
+        element: <ReadArticlePage />,
       },
     ],
   },

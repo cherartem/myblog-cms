@@ -12,6 +12,7 @@ import TitleFormField from "@/pages/new-article/components/TitleFormField";
 import DescriptionFormField from "@/pages/new-article/components/DescriptionFormField";
 import ContentFormField from "@/pages/new-article/components/ContentFormField";
 import FormRadioGroup from "@/pages/new-article/components/FormRadioGroup";
+import he from "he";
 
 const formSchema = z.object({
   title: z.string().nonempty("This field is required").max(70),
@@ -42,9 +43,9 @@ export default function EditArticleForm({
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      title: title,
-      description: description,
-      content: content,
+      title: he.decode(title),
+      description: he.decode(description),
+      content: he.decode(content),
       type: isPublished === true ? "published" : "saved",
     },
   });
