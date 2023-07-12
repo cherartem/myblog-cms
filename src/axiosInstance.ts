@@ -2,7 +2,7 @@ import axios from "axios";
 import { getAccessToken, setAccessToken } from "./accessToken";
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:5000/api/",
+  baseURL: "https://myblog-api.fly.dev/api",
   withCredentials: true,
 });
 
