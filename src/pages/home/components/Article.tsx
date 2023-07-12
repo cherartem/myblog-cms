@@ -6,6 +6,7 @@ import { DateTime } from "luxon";
 import { Badge } from "@/components/ui/badge";
 import he from "he";
 import { Balancer } from "react-wrap-balancer";
+import ReadArticleButton from "./ReadArticleButton";
 
 interface ArticleProps {
   article: IArticle;
@@ -36,7 +37,8 @@ export default function Article({ article }: ArticleProps) {
         <Balancer>{he.decode(article.description)}</Balancer>
       </p>
       <div className="flex flex-row gap-4">
-        <EditButton />
+        <ReadArticleButton />
+        <EditButton articleId={article._id} />
         <DeleteAlertDialog articleId={article._id} />
       </div>
     </div>

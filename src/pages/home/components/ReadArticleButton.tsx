@@ -5,27 +5,23 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { Edit } from "lucide-react";
+import { Book } from "lucide-react";
 import { Link } from "react-router-dom";
 
-interface Props {
-  articleId: string;
-}
-
-export default function EditButton({ articleId }: Props) {
+export default function ReadArticleButton() {
   return (
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Link to={`/edit/${articleId}`}>
+          <Link to="/">
             <Button variant="secondary" className="hover:bg-slate-200">
-              <Edit className="mr-2 h-4 w-4 text-slate-700" />
-              Edit
+              <Book className="mr-2 h-4 w-4 text-slate-700" />
+              Read Article
             </Button>
           </Link>
         </TooltipTrigger>
         <TooltipContent>
-          <p>Edit this article</p>
+          <p>Read this article</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

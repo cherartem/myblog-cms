@@ -12,12 +12,9 @@ export default function DeleteButton() {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Button
-            size="icon"
-            variant="secondary"
-            className="hover:bg-slate-200"
-          >
-            <Trash2 className="text-slate-700" />
+          <Button variant="secondary" className="hover:bg-slate-200">
+            <Trash2 className="mr-2 h-4 w-4 text-slate-700" />
+            Delete
           </Button>
         </TooltipTrigger>
         <TooltipContent>
