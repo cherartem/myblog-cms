@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { Button } from "@/components/ui/button";
 import axiosInstance from "@/axiosInstance";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { ExtendedAxiosError } from "@/types/ExtendedAxiosError";
 import { Loader2 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -49,6 +49,8 @@ export default function EditArticleForm({
     },
   });
 
+  const queryClient = useQueryClient();
+
   const { isLoading, mutate } = useMutation({
     mutationFn: async ({
       title,
@@ -87,6 +89,7 @@ export default function EditArticleForm({
       }
     },
     onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["articles", articleId] });
       navigate("/");
     },
   });

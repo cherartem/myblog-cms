@@ -19,7 +19,7 @@ export default function EditArticlePage() {
 
   const { data, isLoading, isError } = useQuery({
     queryFn: () => fetchArticleById(articleId),
-    queryKey: ["article", articleId],
+    queryKey: ["articles", articleId],
   });
 
   return (
